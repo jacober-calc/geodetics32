@@ -1,0 +1,95 @@
+# STACK
+
+# REGS
+
+# FLAGS
+
+# SEED
+
+# MODE
+MTRIG: DEG
+MFMT: FIX 6
+FN= L
+
+# EQUATION LIST
+EQNPTR: 0
+EQN
+EQNEND
+
+# PROGRAM
+PTR: 0
+PGM
+  LBL L
+  CLx
+  82.5018
+  42.3149
+  48.4284
+  INPUT L
+  298.257223563
+  1/x
+  STO F
+  6378137
+  STO E
+  RCL L
+  SIN
+  RCL L
+  SIN
+  \mul;
+  RCL F
+  \mul;
+  1
+  x<>y
+  -
+  RCL E
+  \mul;
+  1000
+  \div;
+  STO X
+  RCL L
+  COS
+  \mul;
+  STO R
+  \pi;
+  2
+  \mul;
+  \mul;
+  STO C
+  23.934472
+  \div;
+  STO V
+  RCL C
+  RCL X
+  RCL R
+  RCL V
+  RTN
+  LBL H
+  INPUT H
+  XEQ L
+  RCL X
+  1000
+  \mul;
+  STO R
+  2
+  \mul;
+  RCL H
+  \mul;
+  RCL H
+  x\sqr;
+  +
+  SQRT
+  STO D
+  RCL R
+  2
+  \pi;
+  \mul;
+  \mul;
+  \div;
+  100
+  \mul;
+  STO P
+  RCL L
+  RCL H
+  RCL P
+  RCL D
+  RTN
+PGMEND
